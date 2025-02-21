@@ -81,10 +81,9 @@ def make_authors_header(target, source, env):
             g.write("};\n")
 
         for line in f:
-            if reading:
-                if line.startswith("    "):
-                    g.write('\t"' + escape_string(line.strip()) + '",\n')
-                    continue
+            if reading and line.startswith("    "):
+                g.write('\t"' + escape_string(line.strip()) + '",\n')
+                continue
             if line.startswith("## "):
                 if reading:
                     close_section()
