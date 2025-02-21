@@ -3170,10 +3170,10 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 			OS::get_singleton()->shell_open("https://github.com/godotengine/godot-proposals#readme");
 		} break;
 		case HELP_SEND_DOCS_FEEDBACK: {
-			OS::get_singleton()->shell_open("https://www.reddit.com/r/godot");
+			OS::get_singleton()->shell_open("https://github.com/godotengine/godot-docs/issues");
 		} break;
 		case HELP_REDDIT: {
-			OS::get_singleton()->shell_open("https://github.com/godotengine/godot-docs/issues");
+			OS::get_singleton()->shell_open("https://www.reddit.com/r/godot");
 		} break;
 		case HELP_COMMUNITY: {
 			OS::get_singleton()->shell_open("https://godotengine.org/community");
