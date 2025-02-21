@@ -3170,6 +3170,9 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 			OS::get_singleton()->shell_open("https://github.com/godotengine/godot-proposals#readme");
 		} break;
 		case HELP_SEND_DOCS_FEEDBACK: {
+			OS::get_singleton()->shell_open("https://www.reddit.com/r/godot");
+		} break;
+		case HELP_REDDIT: {
 			OS::get_singleton()->shell_open("https://github.com/godotengine/godot-docs/issues");
 		} break;
 		case HELP_COMMUNITY: {
@@ -7436,6 +7439,8 @@ EditorNode::EditorNode() {
 	help_menu->add_shortcut(ED_SHORTCUT_AND_COMMAND("editor/report_a_bug", TTR("Report a Bug")), HELP_REPORT_A_BUG);
 	help_menu->add_shortcut(ED_SHORTCUT_AND_COMMAND("editor/suggest_a_feature", TTR("Suggest a Feature")), HELP_SUGGEST_A_FEATURE);
 	help_menu->add_shortcut(ED_SHORTCUT_AND_COMMAND("editor/send_docs_feedback", TTR("Send Docs Feedback")), HELP_SEND_DOCS_FEEDBACK);
+	help_menu->add_shortcut(ED_SHORTCUT_AND_COMMAND("editor/reddit", TTR("Reddit")), HELP_REDDIT);
+	
 	help_menu->add_separator();
 	if (!global_menu || !OS::get_singleton()->has_feature("macos")) {
 		// On macOS  "Quit" and "About" options are in the "app" menu.
