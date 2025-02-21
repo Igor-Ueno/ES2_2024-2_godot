@@ -3883,7 +3883,7 @@ msgid "Version Control"
 msgstr "Controle de Versão"
 
 msgid "Export..."
-msgstr "Exportar…"
+msgstr "ExportARR…"
 
 msgid "Install Android Build Template..."
 msgstr "InstalARR Modelo de Compilação Android..."
