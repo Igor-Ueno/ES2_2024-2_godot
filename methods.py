@@ -1198,8 +1198,8 @@ def generate_vs_project(env, original_args, project_name="godot"):
 
     all_items = []
     properties = []
-    activeItems = []
-    extraItems = []
+    active_Items = []
+    extra_Items = []
 
     set_headers = set(headers_active)
     set_sources = set(sources_active)
