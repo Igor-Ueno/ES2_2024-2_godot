@@ -132,7 +132,7 @@ TEST_CASE("[InputEventKey] Key correctly converts itself to text") {
 	none_key2.set_keycode(Key::NONE);
 	none_key2.set_physical_keycode(Key::ENTER);
 
-	CHECK(none_key2.as_text() == "Enter (" + RTR("Physical" + ")");
+	CHECK(none_key2.as_text() == "Enter (" + RTR("Physical") + ")");
 
 	InputEventKey key;
 
