@@ -111,7 +111,7 @@ def find_msbuild_tools_path_reg():
         print("Error reading output from vswhere: " + str(e))
     except OSError:
         pass  # Fine, vswhere not found
-    except (subprocess.CalledProcessError, OSError):
+    except (subprocess.CalledProcessError):
         pass
 
 
