@@ -1198,8 +1198,8 @@ def generate_vs_project(env, original_args, project_name="godot"):
 
     all_items = []
     properties = []
-    active_Items = []
-    extra_Items = []
+    active_items = []
+    extra_items = []
 
     set_headers = set(headers_active)
     set_sources = set(sources_active)
@@ -1212,7 +1212,7 @@ def generate_vs_project(env, original_args, project_name="godot"):
         )
         all_items.append("</ClInclude>")
         if file in set_headers:
-            active_Items.append(file)
+            active_items.append(file)
 
     for file in sources:
         base_path = os.path.dirname(file).replace("\\", "_")
@@ -1222,7 +1222,7 @@ def generate_vs_project(env, original_args, project_name="godot"):
         )
         all_items.append("</ClCompile>")
         if file in set_sources:
-            active_Items.append(file)
+            active_items.append(file)
 
     for file in others:
         base_path = os.path.dirname(file).replace("\\", "_")
@@ -1232,7 +1232,7 @@ def generate_vs_project(env, original_args, project_name="godot"):
         )
         all_items.append("</None>")
         if file in set_others:
-            active_Items.append(file)
+            active_items.append(file)
 
     if vs_configuration:
         vsconf = ""
@@ -1243,7 +1243,7 @@ def generate_vs_project(env, original_args, project_name="godot"):
 
         condition = "'$(GodotConfiguration)|$(GodotPlatform)'=='" + vsconf + "'"
         itemlist = {}
-        for item in active_Items:
+        for item in active_items:
             key = os.path.dirname(item).replace("\\", "_")
             if key not in itemlist:
                 itemlist[key] = [item]
@@ -1262,7 +1262,7 @@ def generate_vs_project(env, original_args, project_name="godot"):
         props_template = props_template.replace("%%VSCONF%%", vsconf)
         props_template = props_template.replace("%%CONDITION%%", condition)
         props_template = props_template.replace("%%PROPERTIES%%", "\n    ".join(properties))
-        props_template = props_template.replace("%%EXTRA_ITEMS%%", "\n    ".join(extra_Items))
+        props_template = props_template.replace("%%extra_items%%", "\n    ".join(extra_items))
 
         props_template = props_template.replace("%%OUTPUT%%", output)
 
